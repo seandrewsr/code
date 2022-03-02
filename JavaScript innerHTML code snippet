@@ -9,4 +9,7 @@
     s_html.innerHTML = s_html.innerHTML + "<br><br>" + "some more text here";
     s_html.innerHTML = s_html.innerHTML + "<br>";
     
-    
+    // use to change style visibility (show/hide the html element)
+    // s_html.style.visibility = "visible";
+    // s_html.style.visibility = "hidden";
+
