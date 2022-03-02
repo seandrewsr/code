@@ -1,0 +1,39 @@
+Read from web.config file
+
+
+web config app settings section
+
+  <appSettings>
+    <add key="value1" value="configuration setting, common text, etc." />
+    <add key="value2" value="configuration setting, common text, etc." />
+  </appSettings>
+
+
+
+
+
+// C# code
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+protected override void OnLoad(EventArgs e)
+{
+  try
+  {
+    string value1 = string.Empty;
+    string value2 = string.Empty;
+
+    value1 = System.Configuration.ConfigurationManager.AppSettings["value1"];
+    value2 = System.Configuration.ConfigurationManager.AppSettings["value2"];
+  }
+  catch (Exception ex)
+  {
+    throw new Exception(ex.Message.ToString());
+  }
+}
+
