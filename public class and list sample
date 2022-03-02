@@ -14,6 +14,11 @@ public class _tm_mbr
 
 int i = 0;
 
+string _usr_name = "sophie";
+string _therole = "the boss";
+string _userid = "bosssophie";
+string _isactive = "true";
+
 List<_tm_mbr> team_mbr_list = new List<_tm_mbr>();
 
 team_mbr_list.Add(new _tm_mbr { _id = i++.ToString(), _userid = _usr_name, _role = _therole, _actualid = _userid, _isactive = _isactive});
