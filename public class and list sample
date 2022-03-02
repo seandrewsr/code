@@ -1,0 +1,21 @@
+// sample of defining a public class
+// creating a new ListOf
+// populating the new ListOf
+
+
+public class _tm_mbr
+{
+  public string _id { get; set; }
+  public string _userid { get; set; }
+  public string _role { get; set; }
+  public string _actualid { get; set; }
+  public string _isactive { get; set; }
+}
+
+int i = 0;
+
+List<_tm_mbr> team_mbr_list = new List<_tm_mbr>();
+
+team_mbr_list.Add(new _tm_mbr { _id = i++.ToString(), _userid = _usr_name, _role = _therole, _actualid = _userid, _isactive = _isactive});
+
+
