@@ -1,16 +1,23 @@
 
 protected override void OnLoad(EventArgs e)
 {
-  // check browser version
-  HttpRequest _req = System.Web.HttpContext.Current.Request;
-  string _browserAgent = _req.UserAgent;
-  int _edge = _browserAgent.IndexOf("Edge/");
-  int _chrome = _browserAgent.IndexOf("Chrome/");
-
-  if(_edge < 0 && _chrome < 0)
+  try
   {
-    Response.Redirect("wb.aspx",true);
-    return;
+    // check browser version
+    HttpRequest _req = System.Web.HttpContext.Current.Request;
+    string _browserAgent = _req.UserAgent;
+    int _edge = _browserAgent.IndexOf("Edge/");
+    int _chrome = _browserAgent.IndexOf("Chrome/");
+
+    if(_edge < 0 && _chrome < 0)
+    {
+      Response.Redirect("wb.aspx",true);
+      return;
+    }
+  }
+  catch (Exception ex)
+  {
+    throw new Exception(ex.Message.ToString());
   }
 }
 
