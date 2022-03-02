@@ -1,0 +1,12 @@
+// JavaScript innerHTML code snippet
+
+
+  var s_html = document.getElementById("the_html_element"); // sometimes simpler is better
+    s_html.innerHTML = "<br>";
+    s_html.innerHTML = s_html.innerHTML + "some text here";
+    s_html.innerHTML = s_html.innerHTML + "<br><br>" + "some more text here";
+    s_html.innerHTML = s_html.innerHTML + "<br><br>" + "some more text here";
+    s_html.innerHTML = s_html.innerHTML + "<br><br>" + "some more text here";
+    s_html.innerHTML = s_html.innerHTML + "<br>";
+    
+    
