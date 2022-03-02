@@ -1,0 +1,76 @@
+// onmouseover onmouseout add attribute C# and JavaScript
+// code snippet
+
+
+    // the C# code
+    protected void Image_init(object sender, EventArgs e)
+    {
+      if (!IsCallback)
+      {
+        try
+        {
+          var _image = (Image)sender;
+          string _msg = _image.ToolTip;
+          _image.Attributes.Add("onmouseover", String.Format("_mouse_event('{0}', '{1}', '{2}');", _msg, "over", "add" ));
+          _image.Attributes.Add("onmouseout", String.Format("_mouse_event('{0}', '{1}', '{2}');", "", "out", "add" ));
+        }
+        catch (Exception ex)
+        {
+          throw new Exception(ex.Message.ToString());
+        }
+      }
+    }
+
+
+// the JavaScript code
+function _mouse_event(_msg, _event, _img_item)
+{
+  try
+  {
+    switch (_event)
+    {
+      case 'over':
+        document.getElementById("_mouse_over_text").style.visibility = "visible";
+        if (_img_item == "add")
+        {
+          btn_cboard.src = "images/add_case_team_h.png";
+        }
+        if (_img_item == "manage")
+        {
+          btn_manage_case_team.src = "images/manage_case_h.png";
+        }
+        var _txt_ctl = document.getElementById("_mouse_over_text");
+        _txt_ctl.innerHTML = _msg;
+        break;
+
+      case 'out':
+        document.getElementById("_mouse_over_text").style.visibility = "hidden";
+        if (_img_item == "add")
+        {
+          btn_cboard.src = "images/add_case_team.png";
+        }
+        if (_img_item == "manage")
+        {
+          btn_manage_case_team.src = "images/manage_case.png";
+        }
+
+        var _txt_ctl = document.getElementById("_mouse_over_text");
+        _txt_ctl.innerHTML = "";
+        break;
+
+      default:
+        break;
+    }
+  }
+  catch (err)
+  { show_general_alert_msg(err.message); }
+}
+
+
+
+function show_general_alert_msg(_err_msg)
+{
+  alert(_err_msg);
+}
+
+
