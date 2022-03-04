@@ -1,0 +1,73 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+  <title></title>
+  <style>
+  ._hidden
+  {
+    visibility:hidden;
+  }
+  </style>
+
+  <script type="text/javascript">
+    function showview(theview)
+    {
+      try
+      {
+      if (!document.getElementById("UpdatePanel1"))
+      {
+        show_general_alert_msg('general error - showview');
+        return; // graceful exit
+      }
+
+      document.getElementById("about").style.visibility = "visible";
+      __doPostBack('UpdatePanel1', theview);
+    }
+    catch (err)
+    { show_general_alert_msg(err.message); }
+  }
+  </script>
+</head>
+<body>
+<form id="main" runat="server">
+
+  <asp:ScriptManager ID="ScriptManager" EnablePartialRendering="true" runat="server"></asp:ScriptManager>
+
+  <table onmouseover="javascript:showview('about')">
+  <tr>
+  <td>
+    some text here
+  </td>
+  </tr>
+  </table>
+
+
+
+  <table border="0">
+  <tr>
+  <td>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+    <ContentTemplate>
+    <asp:MultiView ID="mainview" runat="server">
+
+    <asp:View ID="about" runat="server" class="_hidden">
+      <table border="0">
+      <tr>
+      <td>
+      some more text here
+      </td>
+      </tr>
+     </table>
+    </asp:View>
+
+    </asp:MultiView>
+    </ContentTemplate>
+    </asp:UpdatePanel>
+  </td>
+  </tr>
+  </table>
+
+</form>
+</body>
+</html>
+
