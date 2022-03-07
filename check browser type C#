@@ -1,23 +1,23 @@
 
-protected override void OnLoad(EventArgs e)
-{
-  try
-  {
-    // check browser version
-    HttpRequest _req = System.Web.HttpContext.Current.Request;
-    string _browserAgent = _req.UserAgent;
-    int _edge = _browserAgent.IndexOf("Edge/");
-    int _chrome = _browserAgent.IndexOf("Chrome/");
-
-    if(_edge < 0 && _chrome < 0)
+ protected override void OnLoad(EventArgs e)
+ {
+   if (!IsPostBack && !IsCallback) // initial page load
+   {
+    try
     {
-      Response.Redirect("wb.aspx",true);
-      return;
+      // check browser version
+      bool allow = false;
+      if(System.Web.HttpContext.Current.Request.UserAgent.Contains("Edge/")) { allow = true; }
+      if(System.Web.HttpContext.Current.Request.UserAgent.Contains("Edg/")) { allow = true; }
+      if(System.Web.HttpContext.Current.Request.UserAgent.Contains("Chrome/")) { allow = true; }
+      if (!allow) { Response.Redirect("wb.aspx",true); }
     }
-  }
-  catch (Exception ex)
-  {
-    throw new Exception(ex.Message.ToString());
-  }
-}
+    catch (Exception ex)
+    {
+      throw new Exception(ex.Message.ToString());
+    }
+   }
+ }
+
+
 
