@@ -1,0 +1,47 @@
+// execute sql stored procedure
+
+public class _obj_class
+{
+  public string _obj_sqlvalue { get; set; }
+}
+
+string sqlconnectionstring = "Data Source=SQLSERVER;Initial Catalog=DATABASE;Integrated Security=SSPI"
+
+dynamic _idfullname_sql;
+
+_idfullname_sql = GeneralFunctions.GetFullName(id);
+
+
+
+
+
+public static _obj_sqlvalue GetFullName(string thevalue)
+{
+  _obj_class _obj_fn = new();
+
+  try
+  {
+    string _sql_con_str = sqlconnectionstring;
+    System.Data.SqlClient.SqlConnection _sql_con = new System.Data.SqlClient.SqlConnection(_sql_con_str);
+    System.Data.SqlClient.SqlCommand _sql_cmd = new System.Data.SqlClient.SqlCommand("the_stored_procedure", _sql_con);
+    _sql_cmd.CommandType = System.Data.CommandType.StoredProcedure;
+    _sql_cmd.Parameters.AddWithValue("@p_storedprocedurevariable", thevalue);
+    _sql_con.Open();
+    System.Data.SqlClient.SqlDataReader _sql_dr = _sql_cmd.ExecuteReader();
+    if (_sql_dr.HasRows)
+    {
+      while (_sql_dr.Read())
+      {
+        _obj_fn._obj_sqlvalue = _sql_dr["thesqlfield"].ToString();
+      }
+    }
+    _sql_dr.Close();
+    _sql_con.Close();
+  }
+  catch (Exception ex)
+  {
+    throw new Exception(ex.Message.ToString());
+  }
+
+  return _obj_fn;
+}
