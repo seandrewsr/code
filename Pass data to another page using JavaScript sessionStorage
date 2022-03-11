@@ -1,0 +1,77 @@
+Pass data to another page using JavaScript sessionStorage key/value
+
+
+
+This is the code for the initial loaded page. We could use localStorage but localStorage data does not expire.
+
+<script type="text/javascript">
+  sessionStorage.setItem('key_name', 'the value to pass to the other page'); // set sessionStorage key and value
+  window.location.replace('the_target_page.aspx'); // go to the target page
+</script>
+
+
+
+
+
+
+This is the code for the target page that will accept the sessionStorage key/value from the initially loaded page.
+
+This code reads the sessionStorage key/value and then does something (whatever you want) on the server side with the sessionStorage key/value
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+  <title>CAMP</title>
+  <script type="text/javascript">
+    window.onload = getSessionStorageObject; // doing this so we can process the sessionStorage object from server code
+
+    function getSessionStorageObject()
+    {
+      data = sessionStorage.getItem('key_name'); // get
+      sessionStorage.removeItem('key_name'); // remove
+      sessionStorage.clear; // clear
+      __doPostBack('UpdatePanel1', data); // postback
+    }
+  </script>
+</head>
+<body>
+<form id="form1" runat="server">
+<asp:ScriptManager ID="ScriptManager" EnablePartialRendering="true" runat="server"></asp:ScriptManager> <%-- this is required for __doPostBack --%>
+<div>
+  <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+  <ContentTemplate>
+    <asp:label
+    ID="lbl_browsermessage"
+    runat="server"
+    Text="">
+    </asp:label>
+  </ContentTemplate>
+  </asp:UpdatePanel>
+</div>
+</form>
+</body>
+</html>
+
+
+
+// and this is the server side code for the target page
+protected override void OnLoad(EventArgs e)
+{
+  if (IsPostBack && !IsCallback)
+  {
+    try
+    {
+      string parameter = Request["__EVENTARGUMENT"]; // process the __doPostBack
+      if (parameter != null)
+      {
+        lbl_browsermessage.Text = parameter;
+      }
+    }
+    catch (Exception ex)
+    {
+      throw new Exception(ex.Message.ToString());
+    }
+  }
+}
+
