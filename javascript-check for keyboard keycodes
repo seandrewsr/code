@@ -1,0 +1,24 @@
+    // check for keyboard keycodes
+
+    // validate - anything numbers
+    // validate - allow only main keyboard numbers
+    // validate - allow only number pad numbers
+    // validate - allow only backspace key
+    // validate - allow A-Z a-z 65-90
+    // keycode 8 = backspace
+    // keycode 0 >= 48 <= 57 >= 96 <= 105 are numbers
+
+    if ((e.htmlEvent.keyCode >= 48 && e.htmlEvent.keyCode <= 90) || (e.htmlEvent.keyCode >= 96 && e.htmlEvent.keyCode <= 105) || (e.htmlEvent.keyCode == 8) || (e.htmlEvent.keyCode == 9))
+    { return; }
+
+    if (e.htmlEvent.keyCode == 46) // delete key
+    { return; }
+
+    if (e.htmlEvent.keyCode == 37) // left arrow key
+    { return; }
+
+    if (e.htmlEvent.keyCode == 39) // right arrow key
+    { return; }
+
+    if (e.htmlEvent.keyCode == 190) // laptop decimal key
+    { return; }
