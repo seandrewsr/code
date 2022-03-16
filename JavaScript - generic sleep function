@@ -1,0 +1,10 @@
+
+function sleep(delay)
+{
+  var start = new Date().getTime();
+  while (new Date().getTime() < start + delay);
+}
+
+
+// calling the custom sleep function
+sleep(1000); // sleep 1 second
