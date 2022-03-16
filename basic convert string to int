@@ -1,0 +1,7 @@
+// basic convert string to int
+
+int.Parse("1");
+int16.Parse("1");
+int32.Parse("1");
+int64.Parse("1");
+
