@@ -1,0 +1,6 @@
+
+
+
+
+document.getElementById("the_html_element_name").className = "the_style_classname_from_css_file";
+
