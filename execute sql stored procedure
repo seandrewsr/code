@@ -1,38 +1,64 @@
-// execute sql stored procedure
 
-public class _obj_class
-{
-  public string _obj_sqlvalue { get; set; }
-}
+1. Create SQL stored procedure
 
-string sqlconnectionstring = "Data Source=SQLSERVER;Initial Catalog=DATABASE;Integrated Security=SSPI"
-
-dynamic _idfullname_sql;
-
-_idfullname_sql = GeneralFunctions.GetFullName(id);
+  use sqldatabase
+  go
 
 
+  create procedure [dbo].[sp_name]
+
+    @p_storedprocedurevariable1 varchar(100),
+    @p_storedprocedurevariable2 varchar(100),
+    @p_storedprocedurevariable3 varchar(100)
+
+  as
+
+    select
+    [alias].[field_1] as [field1],
+    [alias].[field_2] as [field2],
+    [alias].[field_3] as [field3],
+    case when [alias].[field_4] = 0
+      then 'some text here'
+      else 'some text here'
+    end as [field4],
+    from [sqlserver].[sqldatabase].[dbo].[sqltable] as [alias]
+    where [alias].[field_1] = @p_storedprocedurevariable1
+    and ([alias].[field_2] = @p_storedprocedurevariable2 or [alias].[field_3] = @p_storedprocedurevariable3)
+
+  go
 
 
+2. Store your SQL connection string in web.config
 
-public static _obj_sqlvalue GetFullName(string thevalue)
-{
-  _obj_class _obj_fn = new();
+  <appSettings>
+    <add key="sqlconnection_string" value="Data Source=SQLSERVERNAME;Initial Catalog=SQLDATABASENAME;Integrated Security=SSPI" />
+  </appSettings>
+
+
+3. Read the SQL connection string from web.config and use the connection string to connect to the SQL server
+    Prepare and execute SQL stored procedure
+    Read values returned from SQL stored procedure
 
   try
   {
-    string _sql_con_str = sqlconnectionstring;
+    string _sql_con_str = System.Configuration.ConfigurationManager.AppSettings["sqlconnection_string"];
     System.Data.SqlClient.SqlConnection _sql_con = new System.Data.SqlClient.SqlConnection(_sql_con_str);
-    System.Data.SqlClient.SqlCommand _sql_cmd = new System.Data.SqlClient.SqlCommand("the_stored_procedure", _sql_con);
+    System.Data.SqlClient.SqlCommand _sql_cmd = new System.Data.SqlClient.SqlCommand("sp_name",_sql_con);
     _sql_cmd.CommandType = System.Data.CommandType.StoredProcedure;
-    _sql_cmd.Parameters.AddWithValue("@p_storedprocedurevariable", thevalue);
+    _sql_cmd.Parameters.AddWithValue("@p_storedprocedurevariable1", valuetopasstostoredprocedure);
+    _sql_cmd.Parameters.AddWithValue("@p_storedprocedurevariable2", valuetopasstostoredprocedure);
+    _sql_cmd.Parameters.AddWithValue("@p_storedprocedurevariable3", valuetopasstostoredprocedure);
     _sql_con.Open();
     System.Data.SqlClient.SqlDataReader _sql_dr = _sql_cmd.ExecuteReader();
-    if (_sql_dr.HasRows)
+    if(_sql_dr.HasRows)
     {
-      while (_sql_dr.Read())
+      while(_sql_dr.Read())
       {
-        _obj_fn._obj_sqlvalue = _sql_dr["thesqlfield"].ToString();
+        // your code here to do something with the sql data reader result
+        // store the stored procedure results in a varaiable or class object or populate a combo box, etc.
+        _sql_dr["field1"].ToString();
+        _sql_dr["field2"].ToString();
+        _sql_dr["field3"].ToString();
       }
     }
     _sql_dr.Close();
@@ -42,6 +68,3 @@ public static _obj_sqlvalue GetFullName(string thevalue)
   {
     throw new Exception(ex.Message.ToString());
   }
-
-  return _obj_fn;
-}
