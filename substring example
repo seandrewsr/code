@@ -13,3 +13,11 @@ string.Substring(string.Length - _start, _start) // get specific number of strin
 string.Substring(_start, _num_of_chars) // get a specific number of string characters (_num_of_chars) starting at a certain point (_start)
 
 string.Substring(_start) // get all string characters starting at a certain point in the string (_start)
+
+
+
+
+
+
+
+
