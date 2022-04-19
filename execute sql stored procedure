@@ -41,6 +41,10 @@
 
   try
   {
+    string value1 = string.Empty;
+    string value2 = string.Empty;
+    string value3 = string.Empty;
+
     string _sql_con_str = System.Configuration.ConfigurationManager.AppSettings["sqlconnection_string"];
     System.Data.SqlClient.SqlConnection _sql_con = new System.Data.SqlClient.SqlConnection(_sql_con_str);
     System.Data.SqlClient.SqlCommand _sql_cmd = new System.Data.SqlClient.SqlCommand("sp_name",_sql_con);
@@ -56,9 +60,9 @@
       {
         // your code here to do something with the sql data reader result
         // store the stored procedure results in a varaiable or class object or populate a combo box, etc.
-        _sql_dr["field1"].ToString();
-        _sql_dr["field2"].ToString();
-        _sql_dr["field3"].ToString();
+        value1 = _sql_dr["field1"].ToString();
+        value2 = _sql_dr["field2"].ToString();
+        value3 = _sql_dr["field3"].ToString();
       }
     }
     _sql_dr.Close();
