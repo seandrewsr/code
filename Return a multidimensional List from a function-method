@@ -1,0 +1,18 @@
+
+// Return a multidimensional List<> from a function/method
+// Use this method if you do not want to define a class object
+// Everytime you want to return multiple values
+
+public List<Tuple<string, string, string>> YourFunction()
+{
+  List<Tuple<string, string, string>> TupleResult = new(); // define the multidimensional List<>
+
+  string item1 = "some value";
+  string item2 = "another value";
+  string item3 = "and another value";
+
+  TupleResult.Add(new Tuple<string, string, string>(item1, item2, item3)); // populate the multidimensional List<>
+
+  return TupleResult; // return the multidimensional List<>
+}
+
