@@ -3,6 +3,8 @@
 // Use this method if you do not want to define a class object
 // Everytime you want to return multiple values
 
+// could also use a dictionary object instead of a Tuple object
+
 public List<Tuple<string, string, string>> YourFunction()
 {
   List<Tuple<string, string, string>> TupleResult = new(); // define the multidimensional List<>
