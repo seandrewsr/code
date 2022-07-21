@@ -1,0 +1,24 @@
+
+iterate List<List<object>> - two methods
+
+
+
+List<List<object>> mylist = new List<List<object>>();
+mylist.Add("value 1");
+mylist.Add("value 2");
+mylist.Add("value 3");
+
+
+# method one using a for statement
+for(int i = 0; i < mylist.Count; i++)
+{
+  Console.WriteLine("Element#{0} = {1}", i, mylist[i]);
+}
+
+
+# method two  using a foreach statement
+foreach(var value in mylist)
+{
+  Console.WriteLine(mylist[i]);
+}
+
