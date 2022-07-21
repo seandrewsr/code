@@ -1,20 +1,39 @@
 
-// Return a multidimensional List<> from a function/method
-// Use this method if you do not want to define a class object
-// Everytime you want to return multiple values
+// Return a multidimensional array from a function/method
+// Return multiple values
 
-// could also use a dictionary object instead of a Tuple object
 
-public List<Tuple<string, string, string>> YourFunction()
+
+// Using Tuple
+public List<Tuple<string, string>> YourFunction()
 {
-  List<Tuple<string, string, string>> TupleResult = new(); // define the multidimensional List<>
+  List<Tuple<string, string>> TupleResult = new(); // define the multidimensional List<>
 
-  string item1 = "some value";
-  string item2 = "another value";
-  string item3 = "and another value";
+  string item1 = "John Smith";
+  string item2 = "Mary Jones";
 
-  TupleResult.Add(new Tuple<string, string, string>(item1, item2, item3)); // populate the multidimensional List<>
+  TupleResult.Add(new Tuple<string, string>(item1, item2)); // populate the multidimensional List<>
 
   return TupleResult; // return the multidimensional List<>
 }
 
+
+
+// could also use a dictionary object
+public Dictionary<string, string> your_dictionary = new Dictionary<string, string>();
+your_dictionary.Clear();
+your_dictionary.Add("John", "Smith"); // populate the dictionary
+
+
+
+ // could also use a list of anonymous type
+ var list = new[]
+ { 
+   new { Number = 10, Name = "Smith" },
+   new { Number = 10, Name = "John" } 
+ }.ToList(); // populate the anonymous list
+
+ foreach (var item in list)
+ {
+   Console.WriteLine(item.Name);
+ }
