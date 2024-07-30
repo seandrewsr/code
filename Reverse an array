@@ -1,0 +1,40 @@
+
+Reverse an array (FOREACH)
+
+Reverse an Array of numbers using ForEach
+
+  int[] sourceArray =  { 3, 7, 23, 40, 37, 9, 19 };
+
+  List aux = new List();
+
+  foreach (int i in sourceArray)
+  {
+    aux.Insert(0, i);
+  }
+
+  int[] reversed = aux.ToArray(); // the reversed array
+
+  // show the reversed array
+  for (var i = 0; i < reversed.Count(); i++)
+  {
+    System.Diagnostics.Debug.WriteLine(reversed[i]);
+  }    
+
+
+    
+Reverse an Array of strings using ForEach
+    
+  string[] days = {"Sun", "Mon", "Tue"};
+
+  string strr = string.Empty;
+  Array.Reverse(days);
+
+  foreach (string rev in days)
+  {
+    strr += $"{rev} ";
+  }
+
+  // show the reversed array
+  System.Diagnostics.Debug.WriteLine(strr);
+
+

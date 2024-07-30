@@ -1,0 +1,26 @@
+
+Reverse a string (LINQ & WHILE)
+
+Reverse a string using LINQ
+
+  using System.Linq;
+  string strr ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  strr = new string(strr.ToCharArray().Reverse().ToArray());
+  System.Diagnostics.Debug.WriteLine(strr);
+
+
+    
+Reverse a string using WHILE
+
+  string strr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  string rev = "";
+  int a;
+
+  a = strr.Length - 1;
+  while (a >= 0)
+  {
+    rev = rev + strr[a];
+    a--;
+  }
+  System.Diagnostics.Debug.WriteLine(rev);
+

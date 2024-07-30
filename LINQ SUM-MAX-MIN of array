@@ -1,0 +1,25 @@
+
+System LINQ - get MAX(), MIN(), SUM()
+
+Given an array of numbers
+    find the smallest element
+    find the largest element
+    find the sum all of the elements
+      
+
+  using System.LINQ;
+
+  int[] numbers = {51, 1, 3, 4, 98};
+
+  float _min = numbers.Min();
+  float _max = numbers.Max();
+  float _sum = numbers.Sum();
+
+  Console.WriteLine("Smallest  Element: " + _min);   Output: 1
+
+  Console.WriteLine("Largest Element: " + _max);   Output: 98
+
+  Console.WriteLine("Add all Elements together: " + _sum);   Output: 157
+
+
+

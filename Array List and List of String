@@ -1,0 +1,37 @@
+
+Array List and List of String (List)
+
+List<T> is a class that contains multiple objects of the same data type
+It Represents a strongly typed list of objects that can be accessed by index
+Provides methods to search, sort, and manipulate lists
+The List(Of T) class is the generic equivalent of the ArrayList class
+    
+    
+List of String
+  List<string> days = new List<string> // the new list of string array
+  {
+    "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
+  };
+
+  var dayquery = days.AsEnumerable(); // call AsEnumerable method
+
+  foreach (var element in dayquery) // iterate the array
+  {
+    System.Diagnostics.Debug.WriteLine(element);
+  }
+    
+
+    
+ArrayList
+  ArrayList months = new ArrayList() // new array list
+  {
+    "Jan","Feb","March","April","May","June","July","August","September","October","November","December"
+  };
+
+  var monthquery = months.GetEnumerator(); // call AsEnumerable method.
+
+  while (monthquery.MoveNext()) // iterate the array
+  {
+    System.Diagnostics.Debug.WriteLine(monthquery.Current);
+  }
+    

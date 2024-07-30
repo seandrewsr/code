@@ -1,0 +1,64 @@
+Given an array of elements arrange them according to a value
+    
+    
+Sort array elements in ascending (low to high) order buy age
+
+  using system.linq;
+
+  public class Pet
+  {
+    public string Name { get; set; }
+    public int Age { get; set; }
+  }
+
+  public static void OrderByAsc()
+  {
+    Pet[] pets = {
+      new Pet { Name="Barley", Age=8 },
+      new Pet { Name="Boots", Age=4 },
+      new Pet { Name="Whiskers", Age=1 }
+    };
+
+    IEnumerable<Pet> query = pets.OrderBy(pet => pet.Age);
+
+    foreach (Pet pet in query)
+    {
+      Console.WriteLine("{0} - {1}", pet.Name, pet.Age);
+    }
+  }
+
+
+  Output: Whiskers - 1, Boots - 4, Barley - 8
+
+
+
+    
+Sort array elements in descending (high to low) order buy age
+
+  using system.linq;
+
+  public class Pet
+  {
+    public string Name { get; set; }
+    public int Age { get; set; }
+  }
+
+  public static void OrderByDesc()
+  {
+    Pet[] pets = {
+      new Pet { Name="Barley", Age=8 },
+      new Pet { Name="Boots", Age=4 },
+      new Pet { Name="Whiskers", Age=1 }
+    };
+
+    IEnumerable<Pet> query = pets.OrderByDescending(pet => pet.Age);
+
+    foreach (Pet pet in query)
+    {
+      Console.WriteLine("{0} - {1}", pet.Name, pet.Age);
+    }
+  }
+
+  Output: Barley - 8, Boots - 4, Whiskers - 1
+
+

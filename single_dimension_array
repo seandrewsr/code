@@ -1,0 +1,34 @@
+
+The single dimension array
+
+
+Simplest type of array that contains only one row for storing data
+    
+
+    
+Define the array with the NEW expression
+	int[] array1 = new int[5] { 1, 3, 5, 7, 9 }; // new integer array that contains five elements
+	string[] weekDays = new string[] { 'Sun', 'Mon' }; // new string array that contains five elements (only two elements defined)
+
+    
+Define the array with the without NEW expression
+	int[] array1 = { 1, 3, 5, 7, 9 }; // new integer array that contains five elements
+	string[] weekDays = { 'Sun', 'Mon' }; // new string array that contains five elements (only two elements defined)
+
+   
+Display item[0] of the weekDays array
+	System.Diagnostics.Debug.WriteLine(weekDays[0]); // output = Sun
+
+    
+Display item[3] of the array1 array
+	System.Diagnostics.Debug.WriteLine(array1[3]); // output = 7
+
+    
+Iterate the array
+  int[] nums = { 1, 2, 3}; // init array
+
+  foreach(int arrayitem in array1)
+  {
+    System.Diagnostics.Debug.WriteLine("Elem " + arrayitem);
+  }
+

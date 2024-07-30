@@ -1,0 +1,59 @@
+
+Order array elements by value
+
+
+
+Given an array of elements add the elements and find if the sum of ANY TWO
+array elements equal the TOTAL SUM of all the elements in the array
+
+For instance:
+  If the array [5, -6, 7, 2, -13, 3] is passed to DoElementsEqualTotal
+  the total sum of the array elements is 5 - 6 + 7 + 2 -13 + 3 which equals -2
+  so the result is FALSE because the sum of any two elements does not equal -2
+
+  If the array [-13, 3, 5, -5] is passed to DoElementsEqualTotal
+  the total sum of the array elements is -13 +3 + 5 - 5 which equals -10
+  so the result would be TRUE because the total sum of the array is -10 and -13 + 3 = -10.
+
+
+DoElementsEqualTotal returns true if the sum of ANY TWO array elements equal the TOTAL SUM of the items in the array
+
+  int[] intarray = {-13, 3, 5, -5};
+  bool tf = DoElementsEqualTotal(intarray);
+  Console.WriteLine(bool);
+
+
+
+Using standard for loop
+
+  public bool DoElementsEqualTotal(int[] testArray)
+  {
+
+    // get the SUM of all of the array elements
+    int arraytotsum = 0;
+    foreach (int xxx in testArray)
+    {
+      arraytotsum = arraytotsum + xxx;
+    }
+
+    // Iterate the testArray and add all of the elements together
+    for (int i = 0; i < testArray.Length; i++)
+    {
+      int a = testArray[i];
+
+      foreach (int yyy in testArray)
+      {
+        int b = yyy;
+        if (a + b == arraytotsum)
+        {
+          return true;
+        }
+        i++;
+      }
+    }
+    return false;
+  }
+
+
+
+

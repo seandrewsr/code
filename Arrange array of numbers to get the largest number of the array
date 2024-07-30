@@ -1,0 +1,58 @@
+Given an array of numbers arrange the numbers to form the biggest number
+This is not adding the array numbers together
+It is arranging the array elements to form the largest number combination
+    
+    
+Using lambda expression - Sort array elements descending (high to low)
+
+  using System;
+  public class Example
+  {
+    public static void Main()
+    {
+      int[] array = new int[] { 5, 7, 2, 3, 9 };
+      Array.Sort(array, (x, y) => y.CompareTo(x)); // using lambda expression
+      Console.WriteLine(String.Join(", ", array));        // 9, 7, 5, 3, 2
+    }
+  }
+
+  Output: 97532
+
+
+    
+Using Enumerable.OrderByDescending method - Sort array elements descending (high to low)
+
+  using System;
+  using System.Linq;
+ 
+  public class Example
+  {
+    public static void Main()
+    {
+      int[] array = new int[] { 5, 7, 2, 3, 9 };
+ 
+      int[] reversedSorted = array.OrderByDescending(x => x).ToArray(); // using Enumerable.OrderByDescending method
+ 
+      Console.WriteLine(String.Join(", ", reversedSorted));        // 9, 7, 5, 3, 2
+    }
+  }
+
+  Output: 97532
+
+
+    
+Using standard for loop - Sort array elements descending (high to low)
+
+  int[] inputList = { 54, 546, 548, 60 };
+  string output = string.Empty;
+
+  Array.Reverse(inputList); // sort array descending
+
+  for (int i = 0; i < inputList.Length; i++)
+  {
+    output = output + inputList[i];
+  }
+
+  Console.WriteLine(output);  // 60,548,546,54
+
+  Output: 6054854654

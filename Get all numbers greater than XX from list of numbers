@@ -1,0 +1,26 @@
+
+Get all numbers greater than XX from list of numbers
+
+Create a list of numbers and display any numbers with a value greater than 80
+
+  static void GreaterThan80(string[] args)
+  {
+    List<int> _list = new List<int>();
+    _list.Add(55);
+    _list.Add(20);
+    _list.Add(740);
+    _list.Add(76);
+    _list.Add(230);
+    _list.Add(1);
+    _list.Add(95);
+
+    List<int> filter = _list.FindAll(x => x > 80 ? true : false);
+
+    System.Diagnostics.Debug.WriteLine("numbers greater than 80: ");
+
+    foreach (var num in filter)
+    {
+      System.Diagnostics.Debug.WriteLine(num);
+    }
+  
+

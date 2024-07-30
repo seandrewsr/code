@@ -1,0 +1,42 @@
+
+Find the largest number in an array of numbers
+
+
+Given an array of numbers, find the biggest number in the array
+
+  Using Enumerable.Max to Find the Maximum Value of an Array
+  Max is an extension method to the IEnumerable interface
+  requires no parameters and returns the largest value in the sequence of elements
+
+    
+	int[] sourceArray =  { 3, 7, 23, 40, 37, 9, 19 }; // largest number is 40
+
+  Using the IEnumerable.Max() interface extension, find the largest number in the Array
+	int _max = sourceArray.Max();
+	System.Diagnostics.Debug.WriteLine("the largest number in the array is " + _max);  //Output 40
+
+  Using OrderByDescending, order the Array as descending and then find the largest number in the Array
+	int _max = sourceArray.OrderByDescending(x => x).First();
+	System.Diagnostics.Debug.WriteLine("the largest number in the array is " + _max);  //Output 40
+
+  Using the IEnumerable.Min() interface extension, find the smallest number in the Array
+	int _min = sourceArray.Min();
+	System.Diagnostics.Debug.WriteLine("the smallest number in the array is " + _min);  //Output 3
+
+  Using OrderBy, order the Array as ascending and then find the smallest number in the Array
+	int _min = sourceArray.OrderBy(x => x).First();
+	System.Diagnostics.Debug.WriteLine("the smallest number in the array is " + _min);  //Output 3
+
+  Using standard iteration statement
+	  public int GetLargestElementUsingFor(int[] sourceArray)
+	  {
+		int maxElement = sourceArray[0];
+		for (int index = 1; index < sourceArray.Length; index++)
+		{
+		  if (sourceArray[index] > maxElement)
+		  {
+			maxElement = sourceArray[index]; // move to next index
+		  }
+		}
+		return maxElement;
+	  }

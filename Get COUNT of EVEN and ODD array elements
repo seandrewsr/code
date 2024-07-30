@@ -1,0 +1,33 @@
+
+Get COUNT of EVEN and ODD array elements
+
+
+    
+Given an array of numbers get the count of even numbers in the array
+and then get count of the odd numbers in the array
+    
+
+   
+  static void Main(string[] args)
+  {  
+    int[] arraynums = { 10, 7, 25, 40, 93, 22, 45, 52, 85 };
+
+    int c_even = 0;
+    int c_odd = 0;
+
+    for(int i=0; i < arraynums.Length; i++)
+    {
+      if(arraynums[i] % 2 == 0) // if whole num remainder then EVEN
+      {
+        c_even++;
+      }
+      else // else ODD
+      {
+        c_odd++;
+      }
+    }
+
+    System.Diagnostics.Debug.WriteLine("there are " + c_even + " even numbers in the array");
+    System.Diagnostics.Debug.WriteLine("there are " + c_odd + " odd numbers in the array");
+
+
