@@ -1,0 +1,49 @@
+
+Objects and Classes
+
+
+Everything in C# is asscoaited with classes and objects, along with it's mehtods and attributes
+For example: a car is a class and has attributes such as weight and color and methods such as drive and break
+
+    // create a new class named "car"
+    public class car
+    {
+      public int weight { get; set; }
+      public string color { get; set; }
+      public string make { get; set; }
+      public string model { get; set; }
+    }
+
+    
+Objects are created from a class
+You need to create an object from a class before you can populate it with data/values
+To create an object, specify the class name "car" followed by your object name "mycar" and the "new" keyword
+    car mycarobject = new(); // create an object named "mycarobject" from the class named "car"
+
+
+    
+Populate your new class object attributes with data/values
+Specify the new object name and the attribute name as defined in the "car" class
+    mycarobject.weight = 300;
+    mycarobject.color = "white";
+    mycarobject.make = "ford";
+    mycarobject.model = "f150";
+
+    
+Could also do this as one step
+    // create an object named "mycarobject" from the class named "car"
+    // populate your new class object attributes with data/values
+    car mycarobject = new()
+    {
+      weight = 300,
+      color = "white",
+      make = "ford",
+      model = "f150"
+    };
+
+    
+To access the attributes of your "car" class, specify the object name and the attribute
+    System.Diagnostics.Debug.WriteLine(mycarobject.weight);
+    System.Diagnostics.Debug.WriteLine(mycarobject.color);
+    System.Diagnostics.Debug.WriteLine(mycarobject.make);
+    System.Diagnostics.Debug.WriteLine(mycarobject.model);

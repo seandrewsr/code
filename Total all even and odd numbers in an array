@@ -1,0 +1,58 @@
+
+Total all even and odd numbers in an array
+
+
+Given an array of numbers total all EVEN numbers
+
+
+    static long TotalAllEvenNumbers(int[] intArray)
+    {
+      return intArray.Where(i => i % 2 == 0).Sum(i => (long)i); // if a number is divisible by 2 then it is an even number
+    }
+    
+    // run the code
+    int[] intt = { 1, 2, 3, 4, 5};
+    var xxx = TotalAllEvenNumbersA(intt);
+    System.Diagnostics.Debug.WriteLine($"{xxx}");
+
+    OR
+    
+    static long TotalAllEvenNumbers(int[] intArray)
+    {
+      return (from i in intArray where i % 2 == 0 select (long)i).Sum(); // if a number is divisible by 2 then it is an even number
+    }
+    
+    // run the code
+    int[] intt = { 1, 2, 3, 4, 5};
+    var xxx = TotalAllEvenNumbersA(intt);
+    System.Diagnostics.Debug.WriteLine($"{xxx}");
+  
+
+
+    
+Given an array of numbers total all ODD numbers
+    
+  
+    static long TotalAllOddNumbers(int[] intArray)
+    {
+      return intArray.Where(i => i % 2 == 1).Sum(i => (long)i); // if a number is not divisible by 2 then it is an odd number
+    }
+    
+    // run the code
+    int[] intt = { 1, 2, 3, 4, 5};
+    var xxx = TotalAllOddNumbers(intt);
+    System.Diagnostics.Debug.WriteLine($"{xxx}");
+
+    OR
+    
+    static long TotalAllOddNumbers(int[] intArray)
+    {
+      return (from i in intArray where i % 2 == 1 select (long)i).Sum(); // if a number is not divisible by 2 then it is an odd number
+    }
+
+    // run the code
+    int[] intt = { 1, 2, 3, 4, 5};
+    var xxx = TotalAllOddNumbers(intt);
+    System.Diagnostics.Debug.WriteLine($"{xxx}");
+
+  

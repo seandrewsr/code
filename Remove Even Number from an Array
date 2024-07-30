@@ -1,0 +1,29 @@
+
+Remove Even Number from an Array
+
+  
+  public static string[] removeEven(int[] arg)
+  { 
+    List<string> listOfStrings = new List<string>(); // using List<string> because we do not know the number (size) of the array elements that are odd numbers
+
+    int i = 0;
+    for (int iterate = 0; i < arg.Length; i++)
+    {
+      if (arg[iterate] % 2 != 0)  // if odd number found
+      {
+        listOfStrings.Add(arg[iterate].ToString()); //insert odd value into the listof<T>
+      }
+      iterate++;
+    }
+
+    string[] newarray = listOfStrings.ToArray(); // populate new array with List<string> results
+
+    return newarray; // return new array of only ODD numbers    }
+  }
+
+
+  // run the code
+  int[] array1 = new int[7] { 1, 2, 4, 5, 10, 6, 3 }; // define the new array with defined length
+  int[] intt = { 11, 2, 4, 5, 10, 6, 3 }; // or like this without defining length (add items to array defines the length)
+  removeEven(intt);
+  

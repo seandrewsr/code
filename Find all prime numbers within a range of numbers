@@ -1,0 +1,38 @@
+
+Find all prime numbers within a range of numbers
+
+
+   Input numbers: [1, 2, 3, 4, 5]
+    
+  
+    static void PrimeNums(int[] nums)
+    {
+     for(int i=0; i < nums.Length; i++)
+     {
+       int ctr = 0;
+       for (i = 2; i <= args[i] / 2; i++)
+       {
+         if (args[i] % i == 0)
+         {
+           ctr++;
+           break;
+         }
+       }
+
+       if (ctr == 0 && i != 1)
+       {
+         System.Diagnostics.Debug.WriteLine("prime number {0} ", i);
+       }
+     }
+     return;
+    }
+
+
+    // run the code
+    int[] nums = { 1, 2, 3, 4, 5 }; // init array
+    PrimeNums(nums);
+  
+  Could also change   nums.Max()   to   nums.Min()   to return the smallest number
+    
+  
+\

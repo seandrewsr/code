@@ -1,0 +1,28 @@
+
+Is a given number EVEN or ODD
+
+  
+    public static bool IsEven(int thenum)
+    {
+      if (thenum % 2 == 0) // is even?
+      {
+        System.Diagnostics.Debug.WriteLine("even number");
+        return true;
+      }
+      else
+      {
+        System.Diagnostics.Debug.WriteLine("odd number"); // then false
+        return false;
+      }
+    }
+
+
+    // run the code
+    isnumeven(1);
+    isnumeven(2);
+    isnumeven(3);
+    isnumeven(4);
+  
+
+    
+  Could also change   nums.Max()   to   nums.Min()   to return the smallest number

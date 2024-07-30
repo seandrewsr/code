@@ -1,0 +1,34 @@
+
+The Hash Table
+
+  
+ A Hash table is defined as a data structure used to insert, search, and remove key/value pairs quickly
+  It represents a collection of key/value pairs that are organized based a key
+  Good for performing insertions, deletions, and searches
+  Operates on key/value pairs
+
+  Create an initialize and populate a hash table
+    
+  
+      var cities = new Hashtable(); // initialize hash table
+      cities.Add("UK", "London"); // add key/value pair to hash tbale
+      cities.Add("CA", "Montreal"); // add key/value pair to hash tbale
+      cities.Add("US", "Boston"); // add key/value pair to hash tbale
+      cities.Add("AU", "Brisbane"); // add key/value pair to hash tbale
+
+
+      // iterate and show hash table entries
+      foreach (DictionaryEntry entry in cities)
+      {
+        System.Diagnostics.Debug.WriteLine($"{entry.Key} {entry.Value}");
+      }
+
+      // remove item from hash table via key
+      cities.Remove("CA");
+
+      // and iterate and show again
+      foreach (DictionaryEntry entry in cities)
+      {
+        System.Diagnostics.Debug.WriteLine($"{entry.Key} {entry.Value}");
+      }
+  

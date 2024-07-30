@@ -1,0 +1,26 @@
+
+The Ternary operator
+
+
+The Ternary operator is basically a fancy way to shorten a simple if-else block
+The Ternary operator takes 3 operand
+    
+    
+a simple Ternary operator
+  int number = 53;
+  bool isEven = (number % 2 == 0) ? true : false; // if number % 2 is zero (no remainder) then return true (is even) else return false (not even)
+  System.Diagnostics.Debug.WriteLine(isEven);
+  
+
+    
+compare three numbers and return the largest of the three
+  int a = 10;
+  int b = 2;
+  int c = 88;
+
+  // if a > b and > c then return a
+  // if b > a and > c then return b
+  // else return c
+  int large = (a > b && a > c) ? a : (b > a && b > c) ? b : c; // using ternary operator
+
+  

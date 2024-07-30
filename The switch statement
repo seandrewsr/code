@@ -1,0 +1,56 @@
+    
+The switch statement evaluates a variable and compares it to other values to select a block of code to executed (similar to a SQL case statement)
+A break statement is required
+    
+  public string IsVowel(string var)
+  {
+    string isvowelyn = string.Empty;
+
+    switch(var.ToLower())
+    {
+      case "a":
+        isvowelyn = var + " is a vowel";
+        break; // stop processing the switch statement
+      case "e":
+        isvowelyn = var + " is a vowel";
+        break; // stop processing the switch statement
+      case "i":
+        isvowelyn = var + " is a vowel";
+        break; // stop processing the switch statement
+      case "o":
+        isvowelyn = var + " is a vowel";
+        break; // stop processing the switch statement
+      case "u":
+        isvowelyn = var + " is a vowel";
+        break; // stop processing the switch statement
+      default:
+        isvowelyn = var + " is not a vowel";
+        break; // stop processing the switch statement
+    }
+
+    return isvowelyn;
+  }
+
+  // run the code
+  string resp = IsVowel("u");
+  System.Diagnostics.Debug.WriteLine(resp);
+
+
+    
+You can also combine multiple case statements, like this:
+  switch(body)
+  {
+    case var s when new[] { "ONE", "TWO", "THREE", "FOUR", "FIVE" }.Contains(s):
+      break;
+
+    case var s when new[] { "SIX", "SEVEN" }.Contains(s):
+      break;
+
+    case "EIGHT":
+      break;
+
+    default:
+      break;
+  }
+  
+  
