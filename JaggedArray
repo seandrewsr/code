@@ -1,0 +1,77 @@
+JaggedArray
+
+A jagged array is an array whose elements are arrays (Consists of multiple arrays as its element)
+Sometimes called an "array of arrays"
+Each array inside a jagged array can be of different sizes (Member arrays can be of different sizes)
+
+
+declare array with size (no elements)
+array size declaration is required with this method
+	jaggedArray[0] = new int[5]; // pre-initialize the array with size (5 elements)
+	jaggedArray[1] = new int[4]; // pre-initialize the array with size (4 elements)
+	jaggedArray[2] = new int[2]; // pre-initialize the array with size (2 elements)
+
+declare array and add (initialize) elements upon declaration
+array size declaration not required with this method
+	jaggedArray[0] = new int[] { 1, 3, 5, 7, 9 }; // fill array elements on initialize (do not need array size)
+	jaggedArray[1] = new int[] { 0, 2, 4, 6 }; // fill array elements on initialize (do not need array size)
+	jaggedArray[2] = new int[] { 11, 22 }; // fill array elements on initialize (do not need array size)
+
+
+declare array named jaggedArray2 and add three array elements to it
+      int[][] jaggedArray2 = new int[][] //  initialize array upon declaration
+      {
+        new int[] { 1, 3, 5, 7, 9 }, // zero based - array element [0]
+        new int[] { 0, 2, 4, 6 }, // zero based - array element [1]
+        new int[] { 11, 22 } // zero based - array element [2]
+      };
+
+access the jaggedArray2 elements by array number and element number
+
+	System.Diagnostics.Debug.WriteLine(jaggedArray2[0][1]); // Output: 3
+	System.Diagnostics.Debug.WriteLine(jaggedArray2[1][3]); // Output: 6
+	System.Diagnostics.Debug.WriteLine(jaggedArray2[2][1]); // Output: 22
+
+
+Full example:
+declare the array of two int[2][] elements
+add two arrays as array elements to the array (initialize the array elements)
+iterate and display all elements
+
+
+
+      int[][] arr = new int[2][]; // declare the array of two elements
+
+      // initialize (populate) the elements
+      arr[0] = new int[5] { 1, 3, 5, 7, 9 }; // element 0
+      arr[1] = new int[4] { 2, 4, 6, 8 }; // element 1
+
+      // iterate and display both arrays and elements
+      for (int i = 0; i < arr.Length; i++)
+      {
+        System.Diagnostics.Debug.WriteLine("Array({0}): ", i); <span class="codetextG">Output: the array number (just to see it) - Array(0), Array(1)</span>
+
+        // iterate both arr[0] and arr[1] as i for array length and j as array elements
+        for (int j = 0; j < arr[i].Length; j++)
+        {
+          System.Diagnostics.Debug.WriteLine("{0}{1}", arr[i][j], j == (arr[i].Length - 1) ? "" : " "); <span class="codetextG">Output: 1, 3, 5, 7, 9, 2, 4, 6, 8</span>
+        }
+      }
+
+      // iterate and display only arr[0] elements
+      for (int j = 0; j < arr[0].Length; j++)
+      {
+        System.Diagnostics.Debug.WriteLine("{0}{1}", arr[0][j], j == (arr[0].Length - 1) ? "" : " "); <span class="codetextG">Output: 1, 3, 5, 7, 9</span>
+      }
+
+      // iterate and display only arr[1] elements
+      for (int j = 0; j < arr[1].Length; j++)
+      {
+        System.Diagnostics.Debug.WriteLine("{0}{1}", arr[1][j], j == (arr[1].Length - 1) ? "" : " "); <span class="codetextG">Output: 2, 4, 6, 8</span>
+      }
+
+
+
+
+
+
