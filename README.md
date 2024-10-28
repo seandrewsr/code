@@ -1,4 +1,4 @@
-## Important Files
+## Random Files
 - [Entity Framework and the SQL table structure](Entity%20Framework%20and%20the%20SQL%20table%20structure.pdf)
 - [GetURLParameters](GetURLParameters.pdf)
 - [IsolationLevelsInSQL](IsolationLevelsInSQL.pdf)
