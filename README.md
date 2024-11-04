@@ -3,7 +3,6 @@
 - [Securing REST API with JWT Auth](https://github.com/seandrewsr/code/blob/main/SecuringRESTAPIJWTAuthAES-EncryptedKeys.pdf)
 - [Passing array to Stored Procedure from C#](https://github.com/seandrewsr/code/blob/main/PassingArrayToSP_XML.pdf)
 - [Create Custom MVC API](https://github.com/seandrewsr/code/blob/main/Creating%20a%20Custom%20MVC%20API%20for%20Managing%20Patient%20Prescriptions%20with%20Twilio%20Integration.pdf)
-- [Securing SQL Table Data](https://github.com/seandrewsr/code/blob/main/SecuringSQLTableData.pdf)
 - [Twilio - SendingSMSMessage](Twilio/SendingSMSMessage.pdf)
 - [Twilio - RespondingToSMSMessage](Twilio/RespondingToSMSMessage.pdf)
 - [Twilio - SendingVoiceMessage](Twilio/SendingVoiceMessage.pdf)
@@ -19,6 +18,5 @@
 - [ReturnResultAsJSON](ReturnResultAsJSON.pdf)
 - [SelectSwitchPatternMatching](SelectSwitchPatternMatching.pdf)
 - [Specify_Method_Using_Dictionary_Object](Specify%20Method%20Using%20Dictionary%20Object.pdf)
-- [SQL_ACID](SQL_ACID.pdf)
 - [TSQL-Update a column based on the value of a TSQL variable](TSQL-Update%20a%20column%20based%20on%20the%20value%20of%20a%20TSQL%20variable.pdf)
 
