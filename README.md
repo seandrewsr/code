@@ -10,7 +10,6 @@
 - [Entity Framework and the SQL table structure](Entity%20Framework%20and%20the%20SQL%20table%20structure.pdf)
 - [Defining and using a class](https://github.com/seandrewsr/code/blob/main/DefiningAndUsingClasses.pdf)
 - [GetURLParameters](GetURLParameters.pdf)
-- [IsolationLevelsInSQL](IsolationLevelsInSQL.pdf)
 - [List-KeyValuePair-TKey-TValue](List-KeyValuePair-TKey-TValue.pdf)
 - [Multiple Variable Value Checking](Multiple%20Variable%20Value%20Checking.pdf)
 - [ReadingDictionary](ReadingDictionary.pdf)
@@ -20,5 +19,5 @@
 - [Specify_Method_Using_Dictionary_Object](Specify%20Method%20Using%20Dictionary%20Object.pdf)
 - [TSQL-Update a column based on the value of a TSQL variable](TSQL-Update%20a%20column%20based%20on%20the%20value%20of%20a%20TSQL%20variable.pdf)
 <br><br>
-I will be updating the existing older code to enhance its readability by incorporating expanded descriptions. Additionally, I plan to add new content to the repository as time allows.
+I am in the process of updating the existing older code to enhance its readability by incorporating expanded descriptions. Additionally, I plan to add new content to the repository as time allows.
 <br><br>
