@@ -8,6 +8,7 @@
 - [Twilio - SendingVoiceMessage](Twilio/SendingVoiceMessage.pdf)
 - [Twilio - RespondingToVoiceMessage](Twilio/RespondingToVoiceMessage.pdf)
 - [Entity Framework and the SQL table structure](Entity%20Framework%20and%20the%20SQL%20table%20structure.pdf)
+- [SQLDataClient - Entity Framework: A Comparison](https://github.com/seandrewsr/code/blob/main/SQLDataClient_EntityFramework.pdf)
 - [Defining and using a class](https://github.com/seandrewsr/code/blob/main/DefiningAndUsingClasses.pdf)
 - [GetURLParameters](GetURLParameters.pdf)
 - [List-KeyValuePair-TKey-TValue](List-KeyValuePair-TKey-TValue.pdf)
