@@ -18,7 +18,7 @@
 - [RedirectingActionToController](RedirectingActionToController.pdf)
 - [ReturnResultAsJSON](ReturnResultAsJSON.pdf)
 - [SelectSwitchPatternMatching](SelectSwitchPatternMatching.pdf)
-- [Specify_Method_Using_Dictionary_Object](Specify%20Method%20Using%20Dictionary%20Object.pdf)
+- [Specify_Method_Using_Dictionary_Object](Specify_Method_Using_Dictionary_Object.pdf)
 - [TSQL-Update a column based on the value of a TSQL variable](TSQL-Update%20a%20column%20based%20on%20the%20value%20of%20a%20TSQL%20variable.pdf)
 <br><br>
 I am in the process of updating the existing older code to enhance its readability by incorporating expanded descriptions. Additionally, I plan to add new content to the repository as time allows.
